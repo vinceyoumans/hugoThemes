@@ -1,0 +1,16 @@
+
+
+<div class="container AudioContainer" style="color: rgb(109, 4, 4); background-color:rgb(185, 179, 179);padding:15px">
+        <div class="well well-lg">
+                <h3>Audio File:  
+                {{.Get "mp3"}}
+                </h3>
+                <br>
+                <audio controls style="width: 100%; margin-bottom: 20px">
+                    {{ with .Get "ogg" }}<source src="{{ . }}" type="audio/ogg">{{ end }}
+                    {{ with .Get "mp3" }}<source src="{{ . }}" type="audio/mpeg">{{ end }}
+                    {{ with .Get "wav" }}<source src="{{ . }}" type="audio/wav">{{ end }}
+                    Your browser does not support the audio element.
+                </audio>
+        </div>
+</div>

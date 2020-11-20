@@ -1,0 +1,40 @@
+<div class="card-body">
+    <div class="row">
+        <div class="col-sm">
+            <h1>Inside cardbody v01 - MagImage05</h1>
+            {{/*  <a class="magnifier-thumb-wrapper" href="{{ .Get`src` | safeURL }}">
+                <img id="thumb" src="{{ .Get`src` | safeURL }}">
+                <img src="{{ .Get "src" | safeURL }}" {{ with .Get "alt" }} alt="{{ . | plainify }}" {{ end }} class="{{ with .Get "position"}}{{ . }}{{ else -}} left {{- end }}" {{ with .Get "style" }} style="{{ . | safeCSS }}" {{ end }} />
+            </a>  */}}
+            <img src="{{ .Get "src" | safeURL }}" {{ with .Get "alt" }} alt="{{ . | plainify }}" {{ end }} class="{{ with .Get "position"}}{{ . }}{{ else -}} left {{- end }}" {{ with .Get "style" }} style="{{ . | safeCSS }}" {{ end }} />
+        </div>
+    </div>
+
+    <div class="magnifier-preview" id="preview" style="width: 200px; height:
+        133px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
+</div>
+
+
+<div class="card-body">
+    <div class="row">
+        <div class="col-sm">
+            <h1>Inside cardbody v01 - MagImage05</h1>
+            {{/*  <a class="magnifier-thumb-wrapper" href="{{ .Get`src` | safeURL }}">
+                <img id="thumb" src="{{ .Get`src` | safeURL }}">
+                <img src="{{ .Get "src" | safeURL }}" {{ with .Get "alt" }} alt="{{ . | plainify }}" {{ end }} class="{{ with .Get "position"}}{{ . }}{{ else -}} left {{- end }}" {{ with .Get "style" }} style="{{ . | safeCSS }}" {{ end }} />
+            </a>  */}}
+            <img src="{{ .Get "src" | safeURL }}" {{ with .Get "alt" }} alt="{{ . | plainify }}" {{ end }} class="{{ with .Get "position"}}{{ . }}{{ else -}} left {{- end }}" {{ with .Get "style" }} style="{{ . | safeCSS }}" {{ end }} />
+        
+
+            <div class="img-magnifier-container">
+                <img id="myimage" src="{{ .Get "src" | safeURL }}" width=50%  alt="Girl">
+              </div>
+
+        
+        </div>
+    </div>
+
+    <div class="magnifier-preview" id="preview" style="width: 200px; height:
+        133px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
+</div>
+

@@ -1,0 +1,25 @@
+{{ if .Site.Params.Debug }}
+{{/*  the info section  */}}
+
+      <footer class="footer mt-5">
+        
+        
+        {{/*  <div class="container">  */}}
+        <div class="container p-3 my-3 bg-dark text-white">  
+                <h1>Footer.html debug.   can togle this in config.toml</h1>
+              <table class="table table-sm">
+                <caption>Hugo Variables for current page</caption>
+                <tr><th>Name</th><td>{{ .Name }}</td></tr>
+                <tr><th>Kind</th><td>{{ .Kind }}</td></tr>
+                <tr><th>Type</th><td>{{ .Type }}</td></tr>
+                <tr><th>List Page</th><td>.Pages</td></tr>
+                <tr><th>IsPage</th><td>{{ .IsPage }}</td></tr>
+                <tr><th>IsHome</th><td>{{ .IsPage }}</td></tr>
+                <tr><th>Next</th><td>{{ .Next }}</td></tr>
+                <tr><th>Prev</th><td>{{ .Prev }}</td></tr>
+                <tr><th>Section</th><td>{{ .CurrentSection }}</td></tr>
+                <tr><th>Debug</th><td>{{ .Site.Params.Debug }}</td></tr>
+              </table>
+        </div>
+      </footer>
+{{ end }}

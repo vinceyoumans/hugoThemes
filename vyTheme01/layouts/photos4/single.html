@@ -1,0 +1,65 @@
+{{ define "main" }}
+
+<div class="container">
+<div class="well well-sm">
+  <div class="row">
+    <div class="col-sm-4">
+      <p>
+          <time class="post-date"
+            datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "Jan 2, 2006" }}
+          </time>
+      </p>    
+    </div>
+    <div class="col-sm-4">
+      <h3><a href="{{ .Permalink | relURL }}" class="card-link">PERMA LINK</a></h3>
+    </div>
+    <div class="col-sm-4">
+      {{ .Weight }}
+      {{ if .Params.tags }}
+      <div class="blog-tags">
+        {{ range .Params.tags }}
+          <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+        {{ end }}
+      </div>
+    {{ end }}
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+<div class="container">
+  <p>{{ .Content }}</p>
+  {{/*  {{ .Content | markdownify }}  */}}
+</div>
+
+<hr>
+
+
+<div class="container">
+  <h1 class="text-info"> Click on image for magnification </h1>
+  <br><br><br>
+
+  {{ range .Resources.ByType "image" }}
+  {{/*  {{ $image := .Fit "800x600" }} */}}
+  {{ $image := .Fit "1000x1000" }}
+
+  <div class="card bg-light">
+    <div class="card-header">
+      {{/*  <h1>this is the header</h1>  */}}
+      {{/*  <p class="card-text">image -  {{ $image}}</p> */}}
+      <a href="{{ $image}}" class="card-link">
+        <h3>Link To {{ $image}}</h3>
+      </a>
+    </div>
+
+    <div class="card-body">
+      <a href="{{ .RelPermalink }}"><img src="{{ $image.RelPermalink}}" class="img-fluid"></a>
+    </div>
+  </div>
+
+  {{end}}
+
+</div>
+
+{{ end }}

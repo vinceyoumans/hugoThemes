@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+
+<div class="container">
+  <h1>--------- photos4/list ----------</h1>
+  <h1 class="text-center">
+    {{ .Type | humanize }}
+    <p>Collection of all photo evidence</p>
+  </h1>
+</div>
+
+
+<div class="container">
+  {{ range .Pages.ByWeight.Reverse }}
+  <div class="card">
+    <div class="card-header bg-info">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Exhibit ID - Title</th>
+            <th scope="col">Type</th>
+            <th scope="col">Date</th>
+            <th scope="col">Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <h1>
+                <a class="text-body" href="{{ .Permalink | relURL }}">{{ if .Draft }}DRAFT:
+                  {{end}}{{ .Title | markdownify }}</a>
+              </h1>
+            </th>
+            <td> {{ .Type }} </td>
+            <td>
+              {{ .Date }} <br>
+              <time class="post-date"
+                datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            </td>
+            <td> {{ .Weight }} </td>
+          </tr>
+        </tbody>
+      </table>
+
+      {{/*  <h1>{{ .Summary }}</h1>  */}}
+      <h3>{{ .Params.Description | markdownify }}</h3>
+    </div>
+
+
+    <div class="card-body">
+      {{/*  <h3>{{ .Params.Description | markdownify }}</h3>  */}}
+      {{/*  <h3>{{ .Params.Long_summary | markdownify }}</h3>  */}}
+      {{/*  <p class="card-text">{{ .Params.Long_summary | markdownify }}</p>  */}}
+      <a href="{{ .Permalink | relURL }}" class="card-link">PERMA LINK</a>
+    </div>
+
+
+    {{/*  <div class="card-footer">
+      <p>Footer</p>
+      <p>Put tax terms here</p>
+    </div>  */}}
+  
+  </div>
+  <br><br><br>
+  {{ end }}
+
+</div>
+{{ end }}
