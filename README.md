@@ -3,6 +3,14 @@
 My personal Stash of HUGO themes that I like.
 
 
+##  how to add submodules
+
+git submodule add https://github.com/vinceyoumans/airspace-hugo
+
+
+
+
+
 ## vyTheme01
 
 ## Features
